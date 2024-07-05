@@ -11,7 +11,7 @@ function Home() {
   const handleDelete = (id)=>{
     const confirm=window.confirm("Would you like to delete ?");
     if(confirm){
-      axios.delete('http://localhost:5000/users/'+ id)
+      axios.delete('http://localhost:3000/users/'+ id)
       .then(res=>{
         navigate('/');
       }).catch(err=> console.log(err))
@@ -24,7 +24,7 @@ function Home() {
 const navigate= useNavigate()
 
   useEffect(() => {
-    axios.get('http://localhost:5000/users')
+    axios.get('http://localhost:3000/users')
       .then(res => setData(res.data))
       .catch(err => console.log(err));
   }, []);
