@@ -16,7 +16,7 @@ function Update() {
 
       useEffect(() => {    
         
-        axios.get('http://localhost:5000/users/'+id)     
+        axios.get('http://localhost:3000/users/'+id)     
         .then(res => {
             setValues(res.data)
         })   
@@ -25,7 +25,7 @@ function Update() {
 
 const handleUpdate =(event) =>{
     event.preventDefault();
-    axios.put('http://localhost:5000/users/' +id, values)
+    axios.put('http://localhost:3000/users/' +id, values)
     .then(res => {
       console.log(res);
       navigate('/')
